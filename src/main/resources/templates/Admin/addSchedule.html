@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Schedule page</title>
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <!-- CSS Files -->
+    <link href="css/mdb.css" rel="stylesheet" />
+</head>
+<body class style="background-color: #c1e2fc">
+<h2 style="background-color: #ccff90; text-align: center;">PAGE FOR CREATING SCHEDULE</h2>
+<br>
+<br>
+<br>
+<a class="nav-link" style="text-align: left;background-color: #ccff90" href=http://localhost:8080/admin/scheduleList>RETURN TO SCHEDULE-LIST</a>
+<br>
+<br>
+<div class="container col-4" th:align="center">
+
+    <form class="text-center" method="post" style="color: #757575; " th:action = "@{/admin/schedule/newSchedule}" th:object="${newSchedule}">
+
+        <div class="md-form" >
+            <span >Status</span>
+            <select  class="browser-default custom-select mb-4 blockName" name="status">
+                <option value="" disabled selected> Status</option>
+                <option th:each="status : ${T(edu.mum.mumsched.domain.ScheduleStatus).values()}"
+                        th:value="${status}" th:text="${status}"></option>
+            </select>
+
+        </div>
+        <br>
+        <div class="md-form" >
+            <span >ENTRY Name</span>
+            <select  class="browser-default custom-select mb-4 entryName" name="entryName">
+                <option value="" disabled selected > Select Entry</option>
+                <option th:each="entry : ${entryList}"
+                        th:value="${entry.getEntryName()}" th:text="${entry.getEntryName()}"></option>
+            </select>
+
+        </div>
+        <br>
+        <div class="md-form" >
+            <span >Block Name</span>
+            <select  class="browser-default custom-select mb-4 blockName" name="blockName">
+                <option value="" disabled selected > Select Block</option>
+                <option th:each="block : ${blockList}"
+                        th:value="${block.getBlockName()}" th:text="${block.getBlockName()}"></option>
+            </select>
+
+        </div>
+
+
+
+
+        <br>
+        <br>
+        <button  class="btn btn-outline-green btn-rounded btn-block my-4 waves-effect z-depth-0"  style="font-weight: bold;text-align: center;"  type="submit" >CREATE NEW SCHEDULE</button>
+        <br>
+
+
+    </form>
+
+
+
+
+</div>
+</body>
+
+
+</html>
+
+
+
+

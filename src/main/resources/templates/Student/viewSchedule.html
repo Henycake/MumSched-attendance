@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Students Schedule</title>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <!-- CSS Files -->
+    <link href="css/mdb.css" rel="stylesheet" />
+</head>
+<body class style="background-color: #c1e2fc">
+<br>
+<br>
+<div th:align="center">
+    <h3>
+        <span style="color: #0b51c5" th:text="${message}"></span>
+
+    </h3>
+</div>
+
+<div  align="center" >
+  <!--  <a th:href="@{/admin/showAddSectionForm}" class="btn btn-primary"> Manage </a>-->
+
+    <h1 >Student Schedule</h1>
+    <br>
+    <table border="1" class="table table-striped ">
+        <thead>
+        <tr>
+
+            <th>Section Name</th>
+            <th>Section Block</th>
+            <th>Course Name</th>
+            <th>Course Code</th>
+            <th>Class Room</th>
+            <th>Course Start Date</th>
+            <th>Course End Date</th>
+            <th>Action</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr  th:each="section : ${sectionList}">
+            <td  th:text="${section.sectionName}" ></td>
+            <td th:text="${section.secBlockName}"></td>
+            <td th:text="${section.getCourse().getCourseTitle()}" ></td>
+            <td th:text="${section.getCourse().getCourseCode()}"></td>
+            <td th:text="${section.classRoom}"></td>
+            <td th:text="${section.startDate}"></td>
+            <td th:text="${section.endDate}"></td>
+            <td>
+                <a th:href="@{/student/registerCourse/{id}(id=${section.id})}" class="btn btn-primary" >REGISTER FOR COURSE</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+
+
+
+</body>
+</html>

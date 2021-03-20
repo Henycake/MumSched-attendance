@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Account Page </title>
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <!-- CSS Files -->
+    <link href="css/mdb.css" rel="stylesheet" />
+</head>
+<body class style="background-color: #c1e2fc">
+<h2 style="background-color: #ccff90; text-align: center;">CREATE ACCOUNT</h2>
+<br>
+<br>
+<br>
+<a class="nav-link" style="text-align: left;background-color: #ccff90" href=http://localhost:8080/miu>RETURN TO MIU-HOME-PAGE</a>
+<br>
+<br>
+<div class="container col-4" th:align="center">
+
+    <form class="text-center" method="post" style="color: #757575; " th:action = "@{/miu/newAccount}" th:object="${newAccount}">
+
+        <div class="md-form" >
+
+            <label for="materialLoginFormEmail" style="font-weight: bold;">Email</label>
+            <input  type="email" name="email" id="materialLoginFormEmail" class="form-control">
+
+        </div>
+        <br>
+        <div class="md-form" >
+
+            <label for="materialLoginFormPassword" style="font-weight: bold;">Password</label>
+            <input  type="password" name="password" id="materialLoginFormPassword" class="form-control">
+
+
+        </div>
+
+        <br>
+        <div class="md-form" >
+            <span >Role</span>
+            <select  class="browser-default custom-select mb-4 roleType" name="roleType">
+                <option value="" disabled selected> Entry Type</option>
+                <option th:each="role : ${T(edu.mum.mumsched.domain.Role).values()}"
+                        th:value="${role}" th:text="${role}"></option>
+            </select>
+
+        </div>
+        <br>
+        <button  class="btn btn-outline-green btn-rounded btn-block my-4 waves-effect z-depth-0"  style="font-weight: bold;text-align: center;"  type="submit" >SUBMIT</button>
+        <br>
+
+        <div>
+            <h3>
+                <span style="color: #0b51c5" th:text="${message}"></span>
+
+            </h3>
+        </div>
+    </form>
+
+
+
+
+</div>
+</body>
+
+
+</html>
+
+
+
+
+<!--  -->

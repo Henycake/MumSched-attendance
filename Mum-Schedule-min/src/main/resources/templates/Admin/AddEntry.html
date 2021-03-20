@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>entry page</title>
+</head>
+<body>
+<h2 style="background-color: #ffede2; text-align: center;">PAGE FOR CREATING ENTRY</h2>
+<br>
+<a class="nav-link" style="text-align: left;background-color: #ccff90" href=http://localhost:8093/Admin/entryList>RETURN TO ENTRY-LIST</a>
+<br>
+<div class="container col-4">
+    <div class="card" style="text-align: center;">
+        <div class="card-body px-lg-5 pt-0">
+            <form class="text-center" method="post" style="color: #757575; " th:action = "@{/admin/entry/newEntry}" th:object="${newEntry}" >
+
+                <div class="md-form" >
+                    <span >ENTRY TYPE</span>
+                    <select class="browser-default custom-select mb-4 secname" name="entryType">
+                        <option value="" disabled selected> Entry Type</option>
+                        <option th:each="entryName : ${T(edu.mum.mumsched.domain.EntryType).values()}"
+                                th:text="${entryName}" th:value="${entryName}"></option>
+                    </select>
+                    <!--     <label for="materialLoginFormEntryType" style="font-weight: bold;">ENTRY TYPE</label>
+                          <input  type="entryType" name="entryType" id="materialLoginFormEntryType" class="form-control">
+                        -->
+                    </div>
+
+                    <br>
+                    <div class="md-form" >
+
+
+                      <label for="materialLoginFormFppNum" style="font-weight: bold;">NUMBER OF FPP</label>
+                        <input  type="fppNum" name="fppNum" id="materialLoginFormFppNum" class="form-control">
+
+
+                    </div>
+                    <br>
+                    <div class="md-form" >
+
+
+                     <label for="materialLoginFormMppNum" style="font-weight: bold;">NUMBER OF MPP</label>
+                        <input  type="mppNum"  id="materialLoginFormMppNum" name="mppNum" class="form-control">
+
+                    </div>
+
+                    <br>
+                    <!--  <input type="date" id="start3" class="form-control mb-4 secdate1" placeholder="Start Date"th:field="*{startDate}" >
+                      <br>
+                      <input type="date" id="end3" class="form-control mb-4 secdate2" placeholder="End Date"th:field="*{endDate}" >
+                      -->
+                    <div class="md-form" >
+                        <label for=start>START DATE:</label>
+
+                        <input type="date" id="start" name="startDate"
+                               value="2021-07-22"
+                               min="2021-01-01" max="2022-12-31">
+                    </div>
+                    <br>
+                    <div class="md-form" >
+                        <label for=start>END DATE:</label>
+
+                        <input type="date" id="EndDate" name="endDate"
+                               value="2021-07-22"
+                               min="2021-01-01" max="2022-12-31">
+                    </div>
+
+
+                    <div class="d-flex justify-content-around"> </div>
+
+
+
+                    <!-- Sign in button -->
+                    <br>
+                    <br>
+                    <button  class="btn btn-outline-green btn-rounded btn-block my-4 waves-effect z-depth-0"  style="font-weight: bold; font-size: 28;text-align: center;"  type="submit">CREATE ENTRY</button>
+
+            </form>
+        </div>
+
+    </div>
+
+
+</div>
+
+
+
+
+<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+
+    <li class="nav-item">
+        <!--                    <a class="nav-link active" aria-current="page" href="#">Manage Entry</a>-->
+        <a class="nav-link" href=http://localhost:8093/miu/adminPage>
+            <p>return to AdminPage</p>
+        </a>
+    </li>
+
+</ul>
+
+
+ </body>
+
+</html>

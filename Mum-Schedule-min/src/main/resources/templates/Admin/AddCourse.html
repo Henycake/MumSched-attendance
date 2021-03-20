@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Course Manage page</title>
+</head>
+<body>
+<h2 style="background-color: #ffede2; text-align: center;">PAGE FOR CREATING COURSE</h2>
+
+<div class="container col-4">
+    <div class="card" style="text-align: center;">
+        <div class="card-body px-lg-5 pt-0">
+            <form class="text-center" method="post" style="color: #757575; " th:action = "@{/admin/course/newCourse}" th:object="${newCourse}" >
+
+                <div class="md-form" >
+
+                    <label for="materialLoginFormCourseCode" style="font-weight: bold;">Course Code</label>
+                    <input  type="courseCode" name="courseCode" id="materialLoginFormCourseCode" class="form-control">
+
+                </div>
+                <br>
+                <div class="md-form" >
+
+                    <label for="materialLoginFormCourseTitle" style="font-weight: bold;">Course Title</label>
+                    <input  type="courseTitle" name="courseTitle" id="materialLoginFormCourseTitle" class="form-control">
+
+
+                </div>
+                <br>
+                <div class="md-form" >
+
+                    <label for="materialLoginFormCourseCredit" style="font-weight: bold;">Course Credit</label>
+                    <input  type="courseCredit" name="courseCredit" id="materialLoginFormCourseCredit" class="form-control">
+
+
+                </div>
+                <br>
+                <div class="md-form" >
+
+                    <label for="materialLoginFormCourseLevel" style="font-weight: bold;">Course Level</label>
+                    <input  type="courseLevel" name="courseLevel" id="materialLoginFormCourseLevel" class="form-control">
+
+
+                </div>
+                <br>
+                <div class="md-form" >
+
+                    <label for="materialLoginFormMaxStudent" style="font-weight: bold;">MaxStudent</label>
+                    <input  type="maxStudent" name="maxStudent" id="materialLoginFormMaxStudent" class="form-control">
+                </div>
+
+                <!-- Sign in button -->
+                <br>
+                <br>
+                <button  class="btn btn-outline-green btn-rounded btn-block my-4 waves-effect z-depth-0"  style="font-weight: bold;text-align: center;"  type="submit" >CREATE NEW COURSE</button>
+                <br>
+
+
+            </form>
+        </div>
+
+    </div>
+
+
+</div>
+
+
+
+
+<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+
+    <li class="nav-item">
+        <!--                    <a class="nav-link active" aria-current="page" href="#">Manage Entry</a>-->
+        <a class="nav-link" href=http://localhost:8093/miu/adminPage>
+            <p>return to AdminPage</p>
+        </a>
+    </li>
+
+</ul>
+
+
+</body>
+
+</html>

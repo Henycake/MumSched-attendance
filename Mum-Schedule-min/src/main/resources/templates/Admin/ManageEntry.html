@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8"/>
+    <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
+    <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>
+        Admin  Home Page
+    </title>
+    <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport'/>
+    <!--     Fonts and icons     -->
+    <link rel="stylesheet" type="text/css"
+          href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+    <!-- CSS Files -->
+    <link href="/css/bootstrap.css" rel="stylesheet"/>
+    <link href=" /css/material-dashboard.min.css?v=2.1.2" rel="stylesheet"/>
+    <!-- CSS Just for demo purpose, don't include it in your project -->
+    <link href="/css/demo.css" rel="stylesheet"/>
+</head>
+
+<body class style="background-color: #c1e2fc">
+<div class="wrapper ">
+<!--    <div class="sidebar" data-color="green" data-background-color="white" data-image="../assets/img/sidebar-1.jpg">-->
+<!--        &lt;!&ndash;-->
+<!--          Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"-->
+
+<!--          Tip 2: you can also add an image using data-image tag-->
+<!--      &ndash;&gt;-->
+<!--        <div class="logo"><a href="#" class="simple-text logo-normal">-->
+<!--            MIUSched-->
+<!--        </a></div>-->
+<!--        start nav bar-->
+        <nav class="navbar navbar-expand-lg navbar navbar-dark bg-primary">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                        <li class="nav-item">
+                            <!--                    <a class="nav-link active" aria-current="page" href="#">Admin Dashboard</a>-->
+                            <a class="nav-link" href="/admin/admindashboard">
+                                <i class="material-icons">dashboard</i>
+                                <p>Admin Dashboard</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <!--                    <a class="nav-link active" aria-current="page" href="#">Manage Entry</a>-->
+                            <a class="nav-link" href="/admin/entry">
+                                <i class="material-icons">location</i>
+                                <p>Manage Entry</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <!--                    <a class="nav-link" href="#">Manage Block</a>-->
+                            <a class="nav-link" href="/admin/block">
+                                <i class="material-icons">Block</i>
+                                <p>Manage Block</p>
+                            </a>
+                        </li>
+                        </li>
+                        <li class="nav-item">
+                            <!--                    <a class="nav-link" href="#">Manage Section</a>-->
+                            <a class="nav-link" href="/admin/section">
+                                <i class="material-icons">Rooms</i>
+                                <p>Manage Section</p>
+                            </a>
+                        </li>
+                        </li>
+                        <li class="nav-item">
+                            <!--                    <a class="nav-link" href="#">Manage Schedule</a>-->
+                            <a class="nav-link" href="/admin/course">
+                                <i class="material-icons">Course</i>
+                                <p>Manage Course</p>
+                            </a>
+                        </li>
+                        </li>
+                        <li class="nav-item">
+                            <!--                    <a class="nav-link" href="#">Manage Schedule</a>-->
+                            <a class="nav-link" href="/admin/student">
+                                <i class="material-icons">Student</i>
+                                <p>Manage Student</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <!--                    <a class="nav-link" href="#">Manage Schedule</a>-->
+                            <a class="nav-link" href="/admin/schedule">
+                                <!--                        <i class="material-icons">Manage Schedule</i>-->
+                                <i class="material-icons">Manage</i>
+                                <p>Manage Schedule</p>
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+<!--        end nav bar-->
+<!--        <div class="sidebar-wrapper">-->
+<!--            <ul class="nav">-->
+<!--                <li class="nav-item   ">-->
+<!--                    <a class="nav-link" href="/admin/admindashboard">-->
+<!--                        <i class="material-icons">dashboard</i>-->
+<!--                        <p> Admin Dashboard</p>-->
+<!--                    </a>-->
+<!--                </li>-->
+<!--                &lt;!&ndash;                <l class="nav-item ">&ndash;&gt;-->
+<!--                &lt;!&ndash;                    <a class="nav-link" href="admin/profile">&ndash;&gt;-->
+<!--                &lt;!&ndash;                        <i class="material-icons">location_searching</i>&ndash;&gt;-->
+<!--                &lt;!&ndash;                        <p>User Profile</p>&ndash;&gt;-->
+<!--                &lt;!&ndash;                    </a>&ndash;&gt;-->
+<!--                &lt;!&ndash;                </li>&ndash;&gt;-->
+<!--                <li class="nav-item active">-->
+<!--                    <a class="nav-link" href="/admin/entry">-->
+<!--                        <i class="material-icons">location_searching</i>-->
+<!--                        <p>Manage Entry</p>-->
+<!--                    </a>-->
+<!--                </li>-->
+
+<!--                <li class="nav-item ">-->
+<!--                    <a class="nav-link" href="/admin/block">-->
+<!--                        <i class="material-icons">language</i>-->
+<!--                        <p>Manage Block</p>-->
+<!--                    </a>-->
+<!--                </li>-->
+<!--                <li class="nav-item ">-->
+<!--                    <a class="nav-link" href="/admin/section">-->
+<!--                        <i class="material-icons">layers</i>-->
+<!--                        <p>Manage Section</p>-->
+<!--                    </a>-->
+<!--                </li>-->
+
+<!--                <li class="nav-item ">-->
+<!--                    <a class="nav-link" href="/admin/course">-->
+<!--                        <i class="material-icons">library_books</i>-->
+<!--                        <p>Manage Course</p>-->
+<!--                    </a>-->
+<!--                </li>-->
+<!--                <li class="nav-item">-->
+<!--                    <a class="nav-link" href="/admin/student">-->
+<!--                        <i class="material-icons">library_books</i>-->
+<!--                        <p>Manage Student</p>-->
+<!--                    </a>-->
+<!--                </li>-->
+<!--                <li class="nav-item ">-->
+<!--                    <a class="nav-link" href="/admin/schedule">-->
+<!--                        <i class="material-icons">Manage Schedule</i>-->
+<!--                        <p>Manage Schedule</p>-->
+<!--                    </a>-->
+<!--                </li>-->
+<!--            </ul>-->
+<!--        </div>-->
+<!--    </div>-->
+    <div class="main-panel">
+        <!-- Navbar -->
+
+        <!-- End Navbar -->
+        <div class="content">
+            <div class="container-fluid">
+<!--                <div class=" col-4 ml-5"><h2 class="green-text">Create Entry</h2>-->
+<!--                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#basicExampleModal">-->
+<!--                        Create Entry-->
+<!--                    </button>-->
+<!--                </div>-->
+
+                <div class="row">
+                    <div class="col-lg-10 col-md-12 mx-auto mt-2">
+                        <div class="card">
+                            <div class="card-header card-header-success">
+                                <h5 class="card-title text-center">Entry List</h5>
+                                <p class="card-category "></p>
+                            </div>
+                            <div class="card-body table-responsive">
+                                <table class="table  table-hover" id="dtBasicExample">
+                                    <thead class="text-success">
+                                    <th>Entry Name</th>
+                                    <th>FPP Number</th>
+                                    <th>MPP Number</th>
+                                    <th>Start Date</th>
+                                    <th>End Date</th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                    <!--                                    <th>Edit Entry</th>-->
+                                    <!--                                    <th>Delete Entry</th>-->
+                                    </thead>
+                                    <tbody>
+                                    <tr th:each="entry : ${entries}">
+                                        <td style=" display: none" th:text="${entry.id}" class="secid"></td>
+                                        <td th:text="${entry.entryName}"class="secname"></td>
+                                        <td th:text="${entry.FPPNum}" class="secnum1"></td>
+                                        <td th:text="${entry.MPPNum}" class="secnum2"></td>
+                                        <td th:text="${entry.startDate}" class="secdate1"></td>
+                                        <td th:text="${entry.endDate}" class="secdate2"></td>
+                                        <!--                                        <td> <td><button type="button" data-toggle="modal" data-target="#updatexampleModal" class="btn btn-success">edit</button></td>-->
+                                        <td><a  data-toggle="modal" data-target="#updatexampleModal"  th:href="${'/admin/entry/edit/' + entry.id}"class="btn btn-default">Edit</a> </td>
+                                        <td><a  class="btn btn-danger" th:href="${'/admin/entry/delete/' + entry.id}" onclick="return confirm('Are you sure?')">Delete</a> </td>
+                                    </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+<!--                change location for Add Entry-->
+                <div class=" col-4 ml-5">
+                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#basicExampleModal">
+                       New Entry
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+
+    </footer>
+</div>
+</div>
+
+<!--Modlas-->
+
+
+<!-- Modal -->
+<div class="modal fade" id="basicExampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Add new Entry</h5>
+                <button type="button" class="cancel" data-dismiss="modal" aria-label="Cancel">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <!--            <form class="text-center" style="color: #757575;" action="#!">-->
+            <form class="text-center" style="color: #757575;" action="#" th:action="@{/admin/entry/addnewentry}" th:object="${newEntry}"
+                  method="post">
+                <div class="modal-body">
+                    <input type="hidden" th:field="*{id}"/>
+
+                    <select  class="browser-default custom-select mb-4 secname" name="entryType">
+                        <option value="" disabled selected> Entry Type</option>
+                        <option th:each="entryName : ${T(edu.mum.mumsched.domain.EntryType).values()}"
+                                th:value="${entryName}" th:text="${entryName}"></option>
+                    </select>
+                    <!--                    <input type="text" id="materialSubscriptionFormPasswords" class="form-control mb-4" placeholder="Title">-->
+
+                    <input type="number" min="0" id="materialSubscriptionFormEmaile" class="form-control mb-4 secnum1" placeholder="FPP Number" th:field="*{FPPNum}">
+                    <input type="number" min="0" id="materialSubscriptionFormEmailm" class="form-control mb-4 secnum2" placeholder="MPP Number" th:field="*{MPPNum}">
+                    <input type="date" id="start3" class="form-control mb-4 secdate1" placeholder="Start Date"th:field="*{startDate}" >
+                    <input type="date" id="end3" class="form-control mb-4 secdate2" placeholder="End Date"th:field="*{endDate}" >
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-success">Save changes</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+<!--  ================                                         -->
+<div class="modal fade" id="updatexampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="updateModalLabel"> Update Entry</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <!--            <form class="text-center" style="color: #757575;" action="#!">-->
+            <form class="text-center" style="color: #757575;" action="#" th:action="@{/admin/entry/updateentry}"
+                  th:object="${entry1}" method="post">
+
+                <input  class = "secid" type="hidden"   th:field="*{id}"/>
+                <div class="modal-body">
+                    <input type="text" id="materialSubscript" class="form-control mb-4 secname" placeholder="Entry Name" th:field="*{entryName}">
+                    <input type="number" min="0" id="materialupdate" class="form-control mb-4 secnum1" placeholder="FPP Number" th:field="*{FPPNum}">
+                    <input type="number" min="0" id="materialupdatempp" class="form-control mb-4 secnum2" placeholder="MPP Number" th:field="*{MPPNum}">
+                    <input type="date" id="start4" class="form-control mb-4 secdate1" placeholder="Start Date"th:field="*{startDate}" >
+                    <input type="date" id="end4" class="form-control mb-4 secdate2" placeholder="End Date"th:field="*{endDate}" >
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-success">Update changes</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+
+<!--=============================-->
+<!--Modal end-->
+
+<!--   Core JS Files   -->
+<script src="/js/jquery.min.js"></script>
+<script src="/js/addons/datatables.min.js"></script>
+<!--<script src="../assets/js/core/popper.min.js"></script>-->
+<script src="/js/material-dashboard.min.js"></script>
+<script src="/js/bootstrap.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $('#dtBasicExample').DataTable();
+        $('.dataTables_length').addClass('bs-select');
+    });
+    $(document).ready(function() {
+
+        $('#updatexampleModal').on('show.bs.modal', function (e) {
+
+            var _button = $(e.relatedTarget); // Button that triggered the modal
+            // secroom secstrt secend capac-->
+            // console.log(_button, _button.parents("tr"));
+            var _row = _button.parents("tr");
+            var secid = _row.find(".secid").text();
+            var _secname = _row.find(".secname").text();
+            var secnum1 = _row.find(".secnum1").text();
+            var secnum2 = _row.find(".secnum2").text();
+            var secdate1 = _row.find(".secdate1").text();
+            var secdate2 = _row.find(".secdate2").text();
+
+            $(this).find(".secid").val(secid);
+            $(this).find(".secname").val(_secname);
+            $(this).find(".secnum1").val(secnum1);
+            $(this).find(".secnum2").val(secnum2);
+            $(this).find(".secdate1").val(secdate1);
+
+            // $(this).find(".block");
+            $(this).find(".secdate2").val(secdate2);
+            // $(this).find(".block").val(block);
+        });
+
+
+    });
+</script>
+
+
+<script>
+
+
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Miu Schedule home page</title>
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <!-- CSS Files -->
+    <link href="css/mdb.css" rel="stylesheet" />
+</head>
+<body class style="background-color: #c1e2fc">
+<!-- Material form login -->
+
+
+<h2 style="background-color:  #ccff90; text-align: center;">MIU SCHEDULING HOME PAGE</h2>
+<h3 style="text-align:center;">
+    <img src="/images/miu.jpeg" style="text-align: center" width="300" height="300">
+</h3>
+
+<div th:align="center" class="container col-4">
+
+    <span style="text-align: center; font-weight: bold;font-color:blue;">Please login to your account</span>
+    <br>
+    <div class="card" style="text-align: center;">
+
+        <div class="card-body px-lg-5 pt-0">
+
+            <form class="text-center" method="post" style="color: #757575; " th:action = "@{/miu/login}" th:object="${account}">
+
+                <div class="md-form">
+                    <label for="materialLoginFormEmail" style="font-weight: bold;">E-mail</label>
+                    <input  type="email" id="materialLoginFormEmail" name="email" class="form-control">
+
+                </div>
+                <br>
+                <div class="md-form" >
+
+                    <label for="materialLoginFormPassword" style="font-weight: bold;">Password</label>
+                    <input  type="password" name="password" id="materialLoginFormPassword" class="form-control">
+
+                </div>
+                <button  class="btn btn-outline-green btn-rounded btn-block my-4 waves-effect z-depth-0"  style="font-weight: bold; font-size: 28;text-align: center;"  type="submit">Sign in</button>
+
+                <div>
+                    <a class="btn btn-outline-green btn-rounded btn-block my-4 waves-effect z-depth-0" style="text-align: center;" href=http://localhost:8080/miu/accountForm>Sign Up</a>
+                </div>
+            </form>
+
+            <br>
+
+        </div>
+    </div>
+
+    <div>
+      
+        <span style=" color: red; " th:text="${message}"></span>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Material form login -->
+<script src="/js/jquery.js"></script>
+<script src="/js/bootstrap.js"></script>
+<script src="/js/mdb.min.js"></script>
+</body>
+</html>

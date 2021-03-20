@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Entry Page</title>
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <!-- CSS Files -->
+    <link href="css/mdb.css" rel="stylesheet" />
+</head>
+<body class style="background-color: #c1e2fc">
+<h2 style="background-color: #ccff90; text-align: center;">PAGE FOR UPDATING ENTRY</h2>
+<br>
+<br>
+<br>
+<a class="nav-link" style="text-align: left;background-color: #ccff90" href=http://localhost:8080/admin/entryList>RETURN TO ENTRY-LIST</a>
+<br>
+<br>
+<div class="container col-4" th:align="center">
+
+            <form class="text-center" method="post" style="color: #757575; " th:action = "@{/admin/entry/editEntry}" th:object="${editEntry}">
+
+                <div class="md-form" >
+                    <span >ENTRY TYPE</span>
+                    <select  class="browser-default custom-select mb-4 secname" name="entryType">
+                        <option value="" disabled selected> Entry Type</option>
+                        <option th:each="entryName : ${T(edu.mum.mumsched.domain.EntryType).values()}"
+                                th:value="${entryName}" th:text="${entryName}"></option>
+                    </select>
+
+                </div>
+                <br>
+                <div class="md-form" >
+
+                    <label for="materialLoginFormFppNum" style="font-weight: bold;">NUMBER OF FPP</label>
+                    <input  type="fppNum" name="fppNum" id="materialLoginFormFppNum" class="form-control">
+
+                </div>
+                <br>
+                <div class="md-form" >
+
+                    <label for="materialLoginFormMppNum" style="font-weight: bold;">NUMBER OF MPP</label>
+                    <input  type="mppNum" name="mppNum" id="materialLoginFormMppNum" class="form-control">
+
+                </div>
+
+                <br>
+
+                <div class="md-form" >
+                    <label for=start>START DATE:</label>
+
+                    <input type="date" id="start" name="startDate"
+                           value="2021-07-22"
+                           min="2021-01-01" max="2022-12-31">
+                </div>
+                <br>
+                <div class="md-form" >
+                    <label for=start>END DATE:</label>
+
+                    <input type="date" id="start" name="endDate"
+                           value="2021-07-22"
+                           min="2021-01-01" max="2022-12-31">
+                </div>
+
+
+                <div class="d-flex justify-content-around">
+                    <div>
+                    </div>
+                </div>
+
+                <!-- Sign in button -->
+                <br>
+                <br>
+                <button  class="btn btn-outline-green btn-rounded btn-block my-4 waves-effect z-depth-0"  style="font-weight: bold;text-align: center;"  type="submit" >SUBMIT UPDATE</button>
+                <br>
+
+
+            </form>
+            <!-- Form -->
+
+
+
+</div>
+</body>
+
+
+</html>
+
+
+
+
+

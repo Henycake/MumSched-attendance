@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>update student page</title>
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <!-- CSS Files -->
+    <link href="css/mdb.css" rel="stylesheet" />
+</head>
+<body class style="background-color: #c1e2fc">
+<h2 style="background-color: #ccff90; text-align: center;">PAGE FOR UPDATING STUDENT</h2>
+<br>
+<br>
+<br>
+<a class="nav-link" style="text-align: left;background-color: #ccff90" href=http://localhost:8080/admin/studentList>RETURN TO STUDENT-LIST</a>
+<br>
+<br>
+<div class="container col-4" th:align="center">
+
+    <form class="text-center" method="post" style="color: #757575; " th:action = "@{/admin/student/editStudent}" th:object="${editStudent}">
+
+
+        <div class="md-form" >
+
+            <label for="materialLoginFormStudentFirstName" style="font-weight: bold;">First Name</label>
+            <input  type="firstName" name="firstName" id="materialLoginFormStudentFirstName" class="form-control">
+
+        </div>
+        <br>
+        <div class="md-form" >
+
+            <label for="materialLoginFormStudentLastName" style="font-weight: bold;">Last Name</label>
+            <input  type="lastName" name="lastName" id="materialLoginFormStudentLastName" class="form-control">
+
+
+        </div>
+        <br>
+        <div class="md-form" >
+
+            <label for="materialLoginFormStudentEmail" style="font-weight: bold;">Email</label>
+            <input  type="email" name="email" id="materialLoginFormStudentEmail" class="form-control">
+
+
+        </div>
+        <br>
+        <div class="md-form" >
+
+            <label for="materialLoginFormStudentId" style="font-weight: bold;">Student Id</label>
+            <input  type="studentId" name="studentId" id="materialLoginFormStudentId" class="form-control">
+
+
+        </div>
+        <br>
+        <div class="md-form" >
+            <span >Student Type</span>
+            <select  class="browser-default custom-select mb-4 blockName" name="stType">
+                <option value="" disabled selected> Student Type</option>
+                <option th:each="stType : ${T(edu.mum.mumsched.domain.StudentType).values()}"
+                        th:value="${stType}" th:text="${stType}"></option>
+            </select>
+        </div>
+        <br>
+        <div class="md-form" >
+            <span >Student Entry</span>
+            <select  class="browser-default custom-select mb-4 stEntry" name="stEntry">
+                <option value="" disabled selected > Select Entry</option>
+                <option th:each="stEntry : ${entryList}"
+                        th:value="${stEntry.getEntryName()}" th:text="${stEntry.getEntryName()}"></option>
+            </select>
+
+        </div>
+
+        <br>
+        <br>
+        <button  class="btn btn-outline-green btn-rounded btn-block my-4 waves-effect z-depth-0"  style="font-weight: bold;text-align: center;"  type="submit" >SUBMIT UPDATE</button>
+        <br>
+
+
+    </form>
+
+
+
+
+</div>
+</body>
+
+
+</html>
+
+
+
+
+<!--  -->

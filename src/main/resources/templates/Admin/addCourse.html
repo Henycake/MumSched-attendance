@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add course page</title>
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <!-- CSS Files -->
+    <link href="css/mdb.css" rel="stylesheet" />
+</head>
+<body class style="background-color: #c1e2fc">
+<h2 style="background-color: #ccff90; text-align: center;">PAGE FOR CREATING COURSE</h2>
+<br>
+<br>
+<br>
+<a class="nav-link" style="text-align: left;background-color: #ccff90" href=http://localhost:8080/admin/courseList>RETURN TO COURSE-LIST</a>
+<br>
+<br>
+<div class="container col-4" th:align="center">
+
+    <form class="text-center" method="post" style="color: #757575; " th:action = "@{/admin/course/newCourse}" th:object="${newCourse}">
+
+        <div class="md-form" >
+
+            <label for="materialLoginFormCourseCode" style="font-weight: bold;">Course Code</label>
+            <input  type="courseCode" name="courseCode" id="materialLoginFormCourseCode" class="form-control">
+
+        </div>
+        <br>
+        <div class="md-form" >
+
+            <label for="materialLoginFormCourseTitle" style="font-weight: bold;">Course Title</label>
+            <input  type="courseTitle" name="courseTitle" id="materialLoginFormCourseTitle" class="form-control">
+
+
+        </div>
+        <br>
+        <div class="md-form" >
+
+            <label for="materialLoginFormCredits" style="font-weight: bold;">Course Credit</label>
+            <input  type="credits" name="credits" id="materialLoginFormCredits" class="form-control">
+
+
+        </div>
+        <br>
+        <div class="md-form" >
+
+            <label for="materialLoginFormLevel" style="font-weight: bold;">Course Level</label>
+            <input  type="level" name="level" id="materialLoginFormLevel" class="form-control">
+
+
+        </div>
+        <br>
+        <div class="md-form" >
+
+            <label for="materialLoginFormMaxStudent" style="font-weight: bold;">MaxStudent</label>
+            <input  type="maxStudent" name="maxStudent" id="materialLoginFormMaxStudent" class="form-control">
+
+
+        </div>
+        <br>
+
+        <br>
+        <br>
+        <button  class="btn btn-outline-green btn-rounded btn-block my-4 waves-effect z-depth-0"  style="font-weight: bold;text-align: center;"  type="submit" >CREATE NEW COURSE</button>
+        <br>
+
+
+    </form>
+
+
+
+
+</div>
+</body>
+
+
+</html>
+
+
+
+
+<!--  -->

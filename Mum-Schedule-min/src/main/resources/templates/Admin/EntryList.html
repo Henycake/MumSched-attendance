@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Entry Management </title>
+
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+          crossorigin="anonymous">
+
+</head>
+
+<body>
+
+
+<div   class="container">
+
+    <a th:href="@{/CreateEntryList}" >Create Entry</a>
+
+    <h1 >Entry List</h1>
+    <table border="1" class = "table table-striped table-responsive-md">
+        <thead>
+        <tr>
+            <th>Entry Type</th>
+            <th>Number of FPP</th>
+            <th>Number of MPP</th>
+            <th>Start date</th>
+            <th>End date</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="entry : ${entryList}">
+            <td th:text="${entry.entryType}"></td>
+            <td th:text="${entry.fppNum}"></td>
+            <td th:text="${entry.mppNum}"></td>
+            <td th:text="${entry.startDate}"></td>
+            <td th:text="${entry.endDate}"></td>
+            <td> <a th:href="@{/deleteEntry/{id}(id=${entry.id})}"class="btn btn-danger">Delete</a> </td>
+        </tr>
+
+        </tbody>
+    </table>
+
+</div>
+
+
+</body>
+</html>
